@@ -88,4 +88,87 @@ if __name__ == "__main__":
 
 
 #1. PS C:\Users\ashutosh.patil\OneDrive - UKG\Documents\Data Science\Complete-Data-Science-With-Machine-Learning-And-NLP-2024-main\5-Step By Step Project Implementation With LifeCycle Of ML Projects\Workspace> python application.py
-#2. 
+
+
+# To make the flask accesibale online
+#ist we need to upload the project to github.
+
+# 1. Go to your project folder
+# in git bash
+# cd "/c/Users/ashutosh.patil/OneDrive - UKG/Documents/Data Science/Complete-Data-Science-With-Machine-Learning-And-NLP-2024-main/5-Step By Step Project Implementation With LifeCycle Of ML Projects/Workspace"
+
+# Confirm you are in the correct folder:
+
+# ls
+
+# You should see files such as:
+
+# application.py
+# models
+# templates
+# requirements.txt
+# 2. Initialize Git
+# git init
+
+# 3. Add the files
+# git add .
+
+# 4. Create a commit
+# git commit -m "Initial Flask project"
+# 5. Create a repository on GitHub
+
+# On GitHub:
+
+# Click New repository.
+# Enter a repository name, for example:
+# fwi-prediction-flask
+# Click Create repository.
+# Do not add a README or .gitignore during creation.
+# 6. Connect your local project to GitHub
+
+# Replace the URL with your repository URL:
+
+# git remote add origin https://github.com/your-username/fwi-prediction-flask.git
+
+# Check the connection:
+
+# git remote -v
+# 7. Push your project
+# git branch -M main
+# git push -u origin main
+
+
+# to make the flas app accessible online.
+
+# You can now deploy your GitHub project using Render.
+
+# First, make sure requirements.txt contains:
+
+# Flask
+# numpy
+# pandas
+# scikit-learn
+# gunicorn
+
+# If you add gunicorn, upload the change to GitHub:
+
+# git add requirements.txt
+# git commit -m "Add Gunicorn for deployment"
+# git push
+# Deploy on Render
+# Go to render.com and sign in with GitHub.
+# Click New → Web Service.
+# Select your GitHub repository.
+
+# When creating the Render Web Service, you will see fields like:
+
+# Build Command
+# Start Command
+
+# Enter:
+
+# Render field	Command
+# Build Command	pip install -r requirements.txt
+# Start Command	gunicorn --bind 0.0.0.0:$PORT application:application
+
+# Done it will get installed and will give the link to access for this application online.
